@@ -1,8 +1,8 @@
-# Use an nginx base image to serve the website
+# Use the official Nginx image
 FROM nginx:alpine
 
-# Copy website files to the nginx directory
-COPY . /usr/share/nginx/html
+# Copy the website files to the Nginx html directory
+COPY ./your_website_directory /usr/share/nginx/html
 
-# Expose port 80 for the website
-EXPOSE 8080
+# Copy Nginx configuration
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
