@@ -1,8 +1,8 @@
-# Use an nginx base image to serve the website
+# Use an official Nginx image as a parent image
 FROM nginx:alpine
 
-# Copy website files to the nginx directory
-COPY . /usr/share/nginx/html
+# Copy your website files to the Nginx HTML directory
+COPY ./your-website-directory /usr/share/nginx/html
 
-# Expose port 80 for the website
-EXPOSE 80
+# Expose the port that Nginx listens on (inside the container)
+EXPOSE 8080
